@@ -9,8 +9,11 @@ echo ""
 echo "Services:"
 kubectl get service
 
+
 echo ""
 echo "Pods:"
 kubectl get pod
 
-
+echo ""
+echo "Ingress:"
+kubectl get ingress
