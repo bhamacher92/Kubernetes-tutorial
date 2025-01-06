@@ -5,8 +5,8 @@ DIR="${1:-.}"
 echo "Workingdirectory: $DIR"
 
 # Find all .yaml and .yml files recursively in the specified directory
-find "$DIR" -type f \( -iname \*.yaml -o -iname \*.yml \) | while read -r file; do
-  echo "Applying $file..."
+find "$DIR" -type f \( -iname \*.yaml -o -iname \*.yml \) | sort -r | while read -r file; do
+  echo "Deleting $file..."
   kubectl delete -f "$file"
 done
 
